@@ -1,0 +1,53 @@
+Brainstorm
+users can sign into the app with their email and password
+users can create recipes with ingredients and instructions
+recipes can be marked as public or private
+users can view other people’s recipes
+ingredients from recipes can be added to user’s grocery lists
+users can create their own occasions and assign recipes to occasions
+Table Ideas
+
+user table 
+email_id 
+Password_id
+
+Recipes table 
+Recipe_id
+Name
+Description
+Instructions
+Boolean DEFAULT true
+user_id
+
+
+Ingredients table
+Ingredient_id
+Name
+unit
+unit_amount
+Recipe_id
+
+Grocery_list table
+User_id
+recipe_id
+
+Occasions table
+Occasions_id
+Recipe_id
+user_id
+name
+
+Relationships:
+One-to-one
+The user table (user_id, Password_id)
+
+One-to-many
+A user can have multiple recipes - (recipes tied to one user though it uses many ingredients)
+A recipe belongs to one user(the recipe_id can be private or public depends on what user_id says)
+One recipe can have multiple ingredients( the recipe_id can have everything that's in the ingredients table because recipe_id)
+A user can have many grocery list items(its tied to one user and looks through many recipes_ids)
+Occasions can have many different recipes (it is tied to one user cause it uses any recipes)
+
+Many-to-many
+
+Occasions can have many different recipes 
